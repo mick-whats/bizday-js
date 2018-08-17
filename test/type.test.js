@@ -21,13 +21,14 @@
 
   test('type is tse', function(t) {
     var bd;
-    bd = new bizday('20151229', {
+    bd = new bizday('20001229', {
       type: 'tse'
     });
-    t.is(bd.val(), '20151229');
-    t.is(bd.add(), '20151230');
-    t.is(bd.add(), '20160104');
-    return t.is(bd.add(), '20160105');
+    t.is(bd.val(), '20001229');
+    t.is(bd.add(), '20010104');
+    t.is(bd.add(24), '20010208');
+    t.is(bd.add(24), '20010315');
+    return t.is(bd.add(24), '20010419');
   });
 
   test('type is TSE', function(t) {

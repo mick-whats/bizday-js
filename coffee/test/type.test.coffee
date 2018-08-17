@@ -10,11 +10,12 @@ test 'type is default', (t) ->
   t.is bd.add(), '20170102'
   t.is bd.add(), '20170103'
 test 'type is tse', (t) ->
-  bd = new bizday('20151229', {type: 'tse'})
-  t.is bd.val(), '20151229'
-  t.is bd.add(), '20151230'
-  t.is bd.add(), '20160104'
-  t.is bd.add(), '20160105'
+  bd = new bizday('20001229', {type: 'tse'})
+  t.is bd.val(), '20001229'
+  t.is bd.add(), '20010104'
+  t.is bd.add(24), '20010208'
+  t.is bd.add(24), '20010315'
+  t.is bd.add(24), '20010419'
 test 'type is TSE', (t) ->
   bd = new bizday('20151229', {type: 'TSE'})
   t.is bd.val(), '20151229'

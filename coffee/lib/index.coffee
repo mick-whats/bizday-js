@@ -70,20 +70,20 @@ class BusinessDay
           list.bizday_jp
         when 'tse','TSE'
           _rejectList = [
-            '12-31'
-            '01-01'
-            '01-02'
-            '01-03'
+            '-12-31'
+            '-01-01'
+            '-01-02'
+            '-01-03'
           ]
           rejectFromList(list.bizday_jp, _rejectList)
         when 'Government','government','go','gov'
           _rejectList = [
-            '12-29'
-            '12-30'
-            '12-31'
-            '01-01'
-            '01-02'
-            '01-03'
+            '-12-29'
+            '-12-30'
+            '-12-31'
+            '-01-01'
+            '-01-02'
+            '-01-03'
           ]
           rejectFromList(list.bizday_jp, _rejectList)
         else
