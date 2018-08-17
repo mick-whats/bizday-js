@@ -1,0 +1,4 @@
+coffee/
+coffeelint.json
+coverage
+.nyc_output
