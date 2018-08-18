@@ -92,8 +92,7 @@ class BusinessDay
       @list = list.omit_weekend
     if rejectList = @opts.reject
       @list = rejectFromList(@list, rejectList)
-
-    @format = if @opts.format? then @opts.format else 'YYYYMMDD'
+    @format = if @opts.format? then @opts.format else 'YYYY-MM-DD'
     @m = if day then moment(day) else moment()
     if BusinessDay.isOutRange(@m,@list)
       throw new OutRangeError(@m, @list)
