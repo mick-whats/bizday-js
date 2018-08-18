@@ -169,3 +169,5 @@ bd.sub(15) // '2018-07-02'
 
 祝日のデータに関してはこちらからお借りしています。  
 [holiday\-jp/holiday\_jp\-ruby: Japanese holiday\.](https://github.com/holiday-jp/holiday_jp-ruby)
+
+[holiday\-jp/holiday\_jp\-js: Japanege holiday\.](https://github.com/holiday-jp/holiday_jp-js)
