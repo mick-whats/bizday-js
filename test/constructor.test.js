@@ -13,15 +13,15 @@
   test('bizday', function(t) {
     var bd;
     bd = new bizday();
-    return t.is(bd.val(), moment().format('YYYYMMDD'));
+    return t.is(bd.val(), moment().format('YYYY-MM-DD'));
   });
 
   test('bizday with format', function(t) {
     var bd;
     bd = new bizday(null, {
-      format: 'YYYY-MM-DD'
+      format: 'YYYYMMDD'
     });
-    return t.is(bd.val(), moment().format('YYYY-MM-DD'));
+    return t.is(bd.val(), moment().format('YYYYMMDD'));
   });
 
   test('bizday with type is jp', function(t) {

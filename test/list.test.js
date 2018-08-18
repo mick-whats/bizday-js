@@ -12,65 +12,65 @@
 
   test('reject with string', function(t) {
     var bd;
-    bd = new bizday('20151231', {
+    bd = new bizday('2015-12-31', {
       reject: ['2016']
     });
-    t.is(bd.val(), '20151231');
-    return t.is(bd.add(), '20170102');
+    t.is(bd.val(), '2015-12-31');
+    return t.is(bd.add(), '2017-01-02');
   });
 
   test('reject with string (not array)', function(t) {
     var bd;
-    bd = new bizday('20151231', {
+    bd = new bizday('2015-12-31', {
       reject: '2016'
     });
-    t.is(bd.val(), '20151231');
-    return t.is(bd.add(), '20170102');
+    t.is(bd.val(), '2015-12-31');
+    return t.is(bd.add(), '2017-01-02');
   });
 
   test('reject with string 2', function(t) {
     var bd;
-    bd = new bizday('20151231', {
+    bd = new bizday('2015-12-31', {
       reject: ['2016', '01-02']
     });
-    t.is(bd.val(), '20151231');
-    return t.is(bd.add(), '20170103');
+    t.is(bd.val(), '2015-12-31');
+    return t.is(bd.add(), '2017-01-03');
   });
 
   test('reject with regex', function(t) {
     var bd;
-    bd = new bizday('20151231', {
+    bd = new bizday('2015-12-31', {
       reject: [/2016/]
     });
-    t.is(bd.val(), '20151231');
-    return t.is(bd.add(), '20170102');
+    t.is(bd.val(), '2015-12-31');
+    return t.is(bd.add(), '2017-01-02');
   });
 
   test('reject with regex (not array)', function(t) {
     var bd;
-    bd = new bizday('20151231', {
+    bd = new bizday('2015-12-31', {
       reject: /2016/
     });
-    t.is(bd.val(), '20151231');
-    return t.is(bd.add(), '20170102');
+    t.is(bd.val(), '2015-12-31');
+    return t.is(bd.add(), '2017-01-02');
   });
 
   test('reject with regex 2', function(t) {
     var bd;
-    bd = new bizday('20151231', {
+    bd = new bizday('2015-12-31', {
       reject: [/01-01/, /01-02/]
     });
-    t.is(bd.val(), '20151231');
-    return t.is(bd.add(), '20160104');
+    t.is(bd.val(), '2015-12-31');
+    return t.is(bd.add(), '2016-01-04');
   });
 
   test('reject with regex and string', function(t) {
     var bd;
-    bd = new bizday('20151231', {
+    bd = new bizday('2015-12-31', {
       reject: [/2016/, '01-02', /01-03/]
     });
-    t.is(bd.val(), '20151231');
-    return t.is(bd.add(), '20170104');
+    t.is(bd.val(), '2015-12-31');
+    return t.is(bd.add(), '2017-01-04');
   });
 
 }).call(this);

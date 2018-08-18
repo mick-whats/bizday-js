@@ -27,7 +27,7 @@ test 'build omitWeekEnd', (t) ->
 
 test 'bizday with format', (t) ->
   # Moment.js | Docs http://momentjs.com/docs/#/displaying/
-  bd = new bizday('20180501', {format: 'L'})
+  bd = new bizday('2018-05-01', {format: 'L'})
   t.is bd.val(), '05/01/2018'
 
 test 'OutRangeError ', (t) ->
@@ -35,93 +35,93 @@ test 'OutRangeError ', (t) ->
   t.is e.message, 'The valid range is from 2000-01-01 to 2030-12-31'
 
 test 'add()', (t) ->
-  bd = new bizday('20180501')
-  t.is bd.val(), '20180501'
-  t.is bd.add(), '20180502'
-  t.is bd.add(), '20180503'
-  t.is bd.add(), '20180504'
-  t.is bd.add(), '20180507'
-  t.is bd.val(), '20180507'
+  bd = new bizday('2018-05-01')
+  t.is bd.val(), '2018-05-01'
+  t.is bd.add(), '2018-05-02'
+  t.is bd.add(), '2018-05-03'
+  t.is bd.add(), '2018-05-04'
+  t.is bd.add(), '2018-05-07'
+  t.is bd.val(), '2018-05-07'
 
 test 'add() OutRangeError ', (t) ->
-  bd = new bizday('20301231')
+  bd = new bizday('2030-12-31')
   e = t.throws -> bd.add()
   t.is e.message, 'The valid range is from 2000-01-01 to 2030-12-31'
 
 test 'add() start is sunday', (t) ->
-  bd = new bizday('20180506')
-  t.is bd.val(), '20180506'
-  t.is bd.add(), '20180507'
-  t.is bd.add(), '20180508'
-  t.is bd.val(), '20180508'
+  bd = new bizday('2018-05-06')
+  t.is bd.val(), '2018-05-06'
+  t.is bd.add(), '2018-05-07'
+  t.is bd.add(), '2018-05-08'
+  t.is bd.val(), '2018-05-08'
 
 test 'add() start is saturday', (t) ->
-  bd = new bizday('20180505')
-  t.is bd.val(), '20180505'
-  t.is bd.add(), '20180507'
-  t.is bd.add(), '20180508'
-  t.is bd.val(), '20180508'
+  bd = new bizday('2018-05-05')
+  t.is bd.val(), '2018-05-05'
+  t.is bd.add(), '2018-05-07'
+  t.is bd.add(), '2018-05-08'
+  t.is bd.val(), '2018-05-08'
 
 test 'add(count)', (t) ->
-  bd = new bizday('20180501')
-  t.is bd.val(), '20180501'
-  t.is bd.add(2), '20180503'
-  t.is bd.add(2), '20180507'
-  t.is bd.val(), '20180507'
+  bd = new bizday('2018-05-01')
+  t.is bd.val(), '2018-05-01'
+  t.is bd.add(2), '2018-05-03'
+  t.is bd.add(2), '2018-05-07'
+  t.is bd.val(), '2018-05-07'
 
 test 'sub()', (t) ->
-  bd = new bizday('20180501')
-  t.is bd.val(), '20180501'
-  t.is bd.sub(), '20180430'
-  t.is bd.sub(), '20180427'
-  t.is bd.sub(), '20180426'
-  t.is bd.val(), '20180426'
+  bd = new bizday('2018-05-01')
+  t.is bd.val(), '2018-05-01'
+  t.is bd.sub(), '2018-04-30'
+  t.is bd.sub(), '2018-04-27'
+  t.is bd.sub(), '2018-04-26'
+  t.is bd.val(), '2018-04-26'
 
 test 'sub() start date is sunday', (t) ->
-  bd = new bizday('20151115')
-  t.is bd.val(), '20151115'
-  t.is bd.sub(), '20151113'
-  t.is bd.sub(), '20151112'
-  t.is bd.sub(), '20151111'
-  t.is bd.val(), '20151111'
+  bd = new bizday('2015-11-15')
+  t.is bd.val(), '2015-11-15'
+  t.is bd.sub(), '2015-11-13'
+  t.is bd.sub(), '2015-11-12'
+  t.is bd.sub(), '2015-11-11'
+  t.is bd.val(), '2015-11-11'
 
 test 'sub(count)', (t) ->
-  bd = new bizday('20180501')
-  t.is bd.val(), '20180501'
-  t.is bd.sub(2), '20180427'
-  t.is bd.sub(2), '20180425'
-  t.is bd.sub(2), '20180423'
-  t.is bd.val(), '20180423'
+  bd = new bizday('2018-05-01')
+  t.is bd.val(), '2018-05-01'
+  t.is bd.sub(2), '2018-04-27'
+  t.is bd.sub(2), '2018-04-25'
+  t.is bd.sub(2), '2018-04-23'
+  t.is bd.val(), '2018-04-23'
 
 test 'sub() OutRangeError ', (t) ->
-  bd = new bizday('20000101')
+  bd = new bizday('2000-01-01')
   e = t.throws -> bd.sub()
   t.is e.message, 'The valid range is from 2000-01-01 to 2030-12-31'
 
 test 'add() with jp-holiday', (t) ->
   # add option key 'type' value of 'jp','jpn', 'JP', 'JPN'
-  bd = new bizday('20180501', {type: 'jp'})
-  t.is bd.val(), '20180501'
-  t.is bd.add(), '20180502'
-  t.is bd.add(), '20180507'
-  t.is bd.add(), '20180508'
+  bd = new bizday('2018-05-01', {type: 'jp'})
+  t.is bd.val(), '2018-05-01'
+  t.is bd.add(), '2018-05-02'
+  t.is bd.add(), '2018-05-07'
+  t.is bd.add(), '2018-05-08'
 
 test 'add(count) with jp-holiday', (t) ->
-  bd = new bizday('20180501', {type: 'jp'})
-  t.is bd.val(), '20180501'
-  t.is bd.add(2), '20180507'
-  t.is bd.add(2), '20180509'
+  bd = new bizday('2018-05-01', {type: 'jp'})
+  t.is bd.val(), '2018-05-01'
+  t.is bd.add(2), '2018-05-07'
+  t.is bd.add(2), '2018-05-09'
 
 test 'sub() with jp-holiday', (t) ->
-  bd = new bizday('20180501', {type: 'JPN'})
-  t.is bd.val(), '20180501'
-  t.is bd.sub(), '20180427'
-  t.is bd.sub(), '20180426'
-  t.is bd.sub(), '20180425'
+  bd = new bizday('2018-05-01', {type: 'JPN'})
+  t.is bd.val(), '2018-05-01'
+  t.is bd.sub(), '2018-04-27'
+  t.is bd.sub(), '2018-04-26'
+  t.is bd.sub(), '2018-04-25'
 
 test 'sub(count) with jp-holiday', (t) ->
-  bd = new bizday('20180501', {type: 'JPN'})
-  t.is bd.val(), '20180501'
-  t.is bd.sub(2), '20180426'
-  t.is bd.sub(2), '20180424'
-  t.is bd.sub(2), '20180420'
+  bd = new bizday('2018-05-01', {type: 'JPN'})
+  t.is bd.val(), '2018-05-01'
+  t.is bd.sub(2), '2018-04-26'
+  t.is bd.sub(2), '2018-04-24'
+  t.is bd.sub(2), '2018-04-20'
