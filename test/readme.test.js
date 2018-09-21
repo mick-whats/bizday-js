@@ -36,8 +36,8 @@
     bd = new bizday('2018-01-01', {
       format: ''
     });
-    t.is(bd.val(), '2018-01-01T00:00:00+09:00');
-    t.is(bd.add(), '2018-01-02T00:00:00+09:00');
+    t.true(bd.val().includes('2018-01-01T00:00:00'));
+    t.true(bd.add().includes('2018-01-02T00:00:00'));
   });
 
   test('constructor format 02', function(t) {
