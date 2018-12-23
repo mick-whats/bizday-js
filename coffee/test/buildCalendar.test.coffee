@@ -1,4 +1,4 @@
-_ = require('lodash')
+_ = require('lodash-core')
 bizday = require('../')
 moment = require 'moment'
 {test} = require 'ava'

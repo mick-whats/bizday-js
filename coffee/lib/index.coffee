@@ -1,5 +1,5 @@
-_ = require 'lodash'
-moment = require 'moment'
+_ = require 'lodash-core'
+moment = require './moment-with-locales.min.js'
 list =
   omit_weekend: require '../data/omit_weekend.json'
   holidays_jp: require '../data/holidays_jp.json'

@@ -2,7 +2,7 @@
 (function() {
   var _, bizday, moment, test;
 
-  _ = require('lodash');
+  _ = require('lodash-core');
 
   bizday = require('../');
 

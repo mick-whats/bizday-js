@@ -2,11 +2,11 @@
 (function() {
   var _, bizday, moment, test;
 
-  _ = require('lodash');
+  _ = require('lodash-core');
 
   bizday = require('../');
 
-  moment = require('moment');
+  moment = require('../lib/moment-with-locales.min.js');
 
   ({test} = require('ava'));
 
